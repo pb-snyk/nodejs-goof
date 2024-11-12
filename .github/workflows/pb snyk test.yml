@@ -1,6 +1,6 @@
 name: "Snyk Test PB"
 on: [push, pull_request]
- jobs:
+jobs:
   build:
     runs-on: ubuntu-latest
     env:
@@ -17,4 +17,4 @@ on: [push, pull_request]
       - run: snyk auth ${{ secrets.SNYK_TOKEN }}
       - run: snyk monitor
       - run: snyk test
-      - continue-on-error: true
+        continue-on-error: true
